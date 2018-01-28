@@ -5,7 +5,7 @@
     <section class="main-container">
       <div class="main-wrapper">
         <h2>SignUp</h2><br>
-        <form class="signup-form" action="includes/signup_inc.php" method="post">
+        <form class="signup-form" action="includes/signup_inc.php" method="post">   
           <p style="margin-bottom: 5px; margin-top: 6px;">Titel: </p>
           <input type="text" name="titel" placeholder="Titel">
           <p style="margin-bottom: 5px; margin-top: 6px;">Vorname: </p>
@@ -29,4 +29,4 @@
         </form>
       </div>
     </section>
-<?php include_once "footer.php"; ?>
+

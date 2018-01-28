@@ -14,19 +14,32 @@
     $last = 'SELECT user_last FROM users WHERE user_uid=' . $uid . '';
     $first = 'SELECT user_first FROM users WHERE user_uid=' . $uid . '';
 
-    $sql = "SELECT user_last, user_first, user_firm FROM users";
+    $sql = "SELECT user_last, user_first, user_firm, user_pic FROM users";
     $result = $db->query($sql);
 if ($result->num_rows > 0) {
     $sql = "SELECT * FROM users WHERE user_uid='$uid'";
     while($row = $result->fetch_assoc()) {
-      echo "
+        echo"
+        <center>
+            <img src='../uploads/userpic/". $row["user_pic"]. "' alt='Avatar' style='width:10%'>
+            <form action='upload.php' method='post' enctype='multipart/form-data'>
+            <input type='file' name='fileToUpload' id='fileToUpload'>
+            <input type='submit' value='Upload Avatar' name='submit'>
+            </form>
+            <h4><b>" . $row["user_first"]." ". $row["user_last"]. "</b></h4> 
+            <p>" . $row["user_firm"]. "</p> 
+            <a style='font-size: 10px;' href='editor.php'>Bearbeiten</a>
+            </center>
+       "; 
+    /*
+        echo "
       <table>
       <tr><td>Name: " . $row["user_last"]. "    <a style='font-size: 10px;' href='editor.php'>Bearbeiten</a></td></tr>
       <tr><td>Vorname: " . $row["user_first"]. "    <a style='font-size: 10px;' href='editor.php'>Bearbeiten</a></td></tr>
       <tr><td>Firma: " . $row["user_firm"]. "    <a style='font-size: 10px;' href='editor.php'>Bearbeiten</a></td></tr>
       </table>";
-
         //echo " <br> Name: " . $row["user_last"]. " <br> Vorname: " . $row["user_first"]. " <br> Firma: " . $row["user_firm"]. "<br>";
+    */
     };
 };
 ?>
