@@ -28,7 +28,8 @@ if ($result->num_rows > 0) {
             </form>
             <h4><b>" . $row["user_first"]." ". $row["user_last"]. "</b></h4> 
             <p>" . $row["user_firm"]. "</p> 
-            <a style='font-size: 10px;' href='editor.php'>Bearbeiten</a>
+            <a style='font-size: 10px;' href='editor.php'>Bearbeiten</a><br>
+            <a style='font-size: 10px;' href='newjob.php'>Neues Angebot erstellen</a>
             </center>
        "; 
     /*
